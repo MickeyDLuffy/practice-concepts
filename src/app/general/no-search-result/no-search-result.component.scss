@@ -1,0 +1,25 @@
+.empty-search {
+  display: flex;
+  margin-top: 3.5rem;
+  text-align: center;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.empty-search i, .empty-search__message {
+  font-weight: bold;
+  text-align: center;
+  line-height: normal;
+  color: #FFFFFF;
+  opacity: 0.7;
+  font-size: 1.0rem;
+  //text-shadow: 5px 5px 5px #FFFFFF;
+}
+.empty-search i {
+  font-style: normal!important;
+}
+
+
+.msg-heading {
+  text-decoration: underline;
+}
