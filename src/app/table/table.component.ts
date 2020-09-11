@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {BehaviorSubject, Subject} from 'rxjs';
 
 @Component({
   selector: 'app-table',
@@ -9,7 +10,7 @@ export class TableComponent implements OnInit {
   schoolTaskColumns: string[] = [''];
   emptyContentMessageContent = 's';
   emptyContentMessageHeader = 'sd';
-  datasource: any;
+  datasource = {loading: false, length: 1 };
   constructor() { }
 
   ngOnInit(): void {

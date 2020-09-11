@@ -1,1 +1,25 @@
-<p>task-table works!</p>
+<app-table>
+
+  <table mat-table [dataSource]="datasource" matSort class="px-5" >
+    <!--  TaskModel Number-->
+    <ng-container matColumnDef="assignmentNumber">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> # </th>
+      <td mat-cell *matCellDef="let assignment"> {{assignment.assignmentNumber}}</td>
+    </ng-container>
+
+    <!--  Category -->
+    <ng-container matColumnDef="assignmentName">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Category </th>
+      <td mat-cell *matCellDef="let assignment" class="ellipse"
+          matTooltip="{{assignment.assignmentName}}" [matTooltipPosition]="'above'">
+        {{assignment.assignmentName ? assignment.assignmentName: '-------'}}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="schoolTaskColumns" ></tr>
+    <tr mat-row *matRowDef="let row; columns: schoolTaskColumns"
+        class="animated fadeInUp"
+        (click)="rowClicked(row) ;">
+
+    </tr>
+  </table>
+</app-table>

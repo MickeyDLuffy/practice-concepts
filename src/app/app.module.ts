@@ -9,7 +9,10 @@ import { TableComponent } from './table/table.component';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { NoSearchResultComponent } from './general/no-search-result/no-search-result.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import {ContentLoaderModule} from '@ngneat/content-loader';
+import {MatTableDataSource, MatTableModule} from '@angular/material/table';
+import {MatSortModule} from '@angular/material/sort';
+import {MatTooltipModule} from '@angular/material/tooltip';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,12 +21,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     TableComponent,
     NoSearchResultComponent
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        MatPaginatorModule,
-        BrowserAnimationsModule
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    MatPaginatorModule,
+    BrowserAnimationsModule,
+    ContentLoaderModule,
+    MatTableModule,
+    MatSortModule,
+    MatTooltipModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
