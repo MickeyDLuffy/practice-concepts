@@ -1,4 +1,4 @@
-<div class="" *ngIf="datasource.loading">
+<div class="" *ngIf="datasource.loading | async; else table">
   <content-loader [height]="200" [width]="350" [speed]="2"
                   [primaryColor]="'#263242'"
                   [secondaryColor]="'#1E2633'"
@@ -11,24 +11,29 @@
 
   </content-loader>
 </div>
-<div class="container-fluid px-5 pt-0 setups">
-  <div class="buttons">
-    <button (click)="createNewTask()"  class="addbutton ml-auto"
-             type="button"
-            [routerLink]="" data-toggle="modal">
-      New Task
-    </button>
+
+<ng-template #table>
+  <div class="container-fluid px-5 pt-0 setups">
+    <div class="buttons">
+      <button (click)="createNewTask()"  class="addbutton ml-auto"
+              type="button"
+              [routerLink]="" data-toggle="modal">
+        New Task
+      </button>
+    </div>
   </div>
-</div>
 
-<ng-content></ng-content>
+  <ng-content></ng-content>
 
-<ng-container>
-  <div *ngIf="datasource.length === 0">
-    <app-no-search-result [messageContent]="emptyContentMessageContent" [messageHeader]="emptyContentMessageHeader">
+  <ng-container>
+    <div *ngIf="datasource.length === 0">
+      <app-no-search-result [messageContent]="emptyContentMessageContent" [messageHeader]="emptyContentMessageHeader">
 
-    </app-no-search-result>
-  </div>
-</ng-container>
-<mat-paginator  [hidePageSize]="false" [length]="1000000" [pageSizeOptions]="[5, 10, 20, 50]" ></mat-paginator>
-<!--</div>-->
+      </app-no-search-result>
+    </div>
+  </ng-container>
+  <mat-paginator  [hidePageSize]="false" [length]="1000000"
+       [pageSizeOptions]="[5, 10, 20, 50]" ></mat-paginator>
+  <!--</div>-->
+</ng-template>
+
