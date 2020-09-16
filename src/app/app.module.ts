@@ -13,6 +13,9 @@ import {ContentLoaderModule} from '@ngneat/content-loader';
 import {MatTableDataSource, MatTableModule} from '@angular/material/table';
 import {MatSortModule} from '@angular/material/sort';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import {TaskService} from './task/task.service';
+import { HttpClientModule} from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,6 +30,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     MatPaginatorModule,
     BrowserAnimationsModule,
     ContentLoaderModule,
+    HttpClientModule,
     MatTableModule,
     MatSortModule,
     MatTooltipModule

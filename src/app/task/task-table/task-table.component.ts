@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {TaskService} from '../task.service';
 
 @Component({
   selector: 'app-task-table',
@@ -6,11 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./task-table.component.scss', '../../table/table.component.scss']
 })
 export class TaskTableComponent implements OnInit {
-  datasource = [{assignmentNumber: 878, assignmentName: 'Impossible'}];
+  datasource ;
   schoolTaskColumns: string[] = [ 'assignmentNumber', 'assignmentName'];
-  constructor() { }
+  constructor(private taskService: TaskService) { }
 
   ngOnInit(): void {
+    this.datasource = this.taskService.getAssigments();
   }
 
   rowClicked(row: any) {

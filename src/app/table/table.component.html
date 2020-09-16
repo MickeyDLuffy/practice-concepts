@@ -23,11 +23,12 @@
     </div>
   </div>
 
-  <ng-content></ng-content>
+  <ng-content ></ng-content>
 
   <ng-container>
     <div *ngIf="datasource.length === 0">
-      <app-no-search-result [messageContent]="emptyContentMessageContent" [messageHeader]="emptyContentMessageHeader">
+      <app-no-search-result [messageContent]="emptyContentMessageContent"
+                            [messageHeader]="emptyContentMessageHeader">
 
       </app-no-search-result>
     </div>
