@@ -15,7 +15,7 @@ export class BoldTextDirective {
 
   @HostListener('mouseover', ['$event'])
    unBolden($events) {
-    console.log($events, 'events')
+    console.log($events, 'events');
     this.isBoldened = false;
   }
 
