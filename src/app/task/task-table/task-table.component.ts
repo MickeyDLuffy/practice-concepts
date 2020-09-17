@@ -4,7 +4,8 @@ import {TaskService} from '../task.service';
 @Component({
   selector: 'app-task-table',
   templateUrl: './task-table.component.html',
-  styleUrls: ['./task-table.component.scss', '../../table/table.component.scss']
+  styleUrls: ['./task-table.component.scss',
+    '../../table/table.component.scss', '../../general-stylesheets/general.scss']
 })
 export class TaskTableComponent implements OnInit {
   datasource ;

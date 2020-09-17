@@ -15,6 +15,7 @@ import {MatSortModule} from '@angular/material/sort';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {TaskService} from './task/task.service';
 import { HttpClientModule} from '@angular/common/http';
+import { BoldTextDirective } from './directives/bold-text.directive';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { HttpClientModule} from '@angular/common/http';
     TaskComponent,
     TaskTableComponent,
     TableComponent,
-    NoSearchResultComponent
+    NoSearchResultComponent,
+    BoldTextDirective
   ],
   imports: [
     BrowserModule,
