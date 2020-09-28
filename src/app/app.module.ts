@@ -16,6 +16,8 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import {TaskService} from './task/task.service';
 import { HttpClientModule} from '@angular/common/http';
 import { BoldTextDirective } from './directives/bold-text.directive';
+import { NgxUnlessDirective } from './directives/ngx-unless.directive';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,8 @@ import { BoldTextDirective } from './directives/bold-text.directive';
     TaskTableComponent,
     TableComponent,
     NoSearchResultComponent,
-    BoldTextDirective
+    BoldTextDirective,
+    NgxUnlessDirective
   ],
   imports: [
     BrowserModule,
@@ -35,7 +38,8 @@ import { BoldTextDirective } from './directives/bold-text.directive';
     HttpClientModule,
     MatTableModule,
     MatSortModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

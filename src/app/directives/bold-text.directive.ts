@@ -2,6 +2,7 @@ import {Directive, HostBinding, HostListener, Input} from '@angular/core';
 
 @Directive({
   selector: '[appBoldText]',
+  exportAs: 'boldenText'
 })
 export class BoldTextDirective {
   @Input('appBoldText')
@@ -25,4 +26,7 @@ export class BoldTextDirective {
     this.isBoldened = true;
   }
 
+  toggleBold() {
+    return !this.isBoldened;
+  }
 }

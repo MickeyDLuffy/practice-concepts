@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {TaskService} from '../task.service';
 
 @Component({
@@ -10,6 +10,7 @@ import {TaskService} from '../task.service';
 export class TaskTableComponent implements OnInit {
   datasource ;
   schoolTaskColumns: string[] = [ 'assignmentNumber', 'assignmentName'];
+
   constructor(private taskService: TaskService) { }
 
   ngOnInit(): void {

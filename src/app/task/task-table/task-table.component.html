@@ -8,14 +8,14 @@
     </ng-container>
 
     <!--  Category -->
-    <ng-container matColumnDef="assignmentName">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Category </th>
+    <ng-container matColumnDef="assignmentName" appBoldText #boldDirective="boldenText">
+      <th mat-header-cell   *matHeaderCellDef mat-sort-header> Category </th>
       <td appBoldText="false" mat-cell *matCellDef="let assignment" class="ellipse"
           matTooltip="{{assignment.assignmentName}}" [matTooltipPosition]="'above'">
         {{assignment.assignmentName ? assignment.assignmentName: '-------'}}</td>
     </ng-container>
 
-    <tr mat-header-row *matHeaderRowDef="schoolTaskColumns" ></tr>
+    <tr mat-header-row *matHeaderRowDef="schoolTaskColumns" (dblclick)="boldDirective.toggleBold()"></tr>
     <tr mat-row *matRowDef="let row; columns: schoolTaskColumns"
         class="animated fadeInUp"
         (click)="rowClicked(row) ;">
@@ -23,3 +23,5 @@
     </tr>
   </table>
 </app-table>
+
+<button mat-button *appNgxUnless="false" style="border: 1px solid #F8A71B">SHow</button>
